@@ -17,6 +17,13 @@ spec:
   scope: Namespaced
   versions:
   - name: v1
+    additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: STATUS
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
     schema:
       openAPIV3Schema:
         description: Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.

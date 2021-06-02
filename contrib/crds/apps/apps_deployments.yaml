@@ -17,6 +17,19 @@ spec:
   scope: Namespaced
   versions:
   - name: v1
+    additionalPrinterColumns:
+    - jsonPath: .status.readyReplicas
+      name: READY
+      type: string
+    - jsonPath: .status.updatedReplicas
+      name: UP-TO-DATE
+      type: string
+    - jsonPath: .status.availableReplicas
+      name: AVAILABLE
+      type: string    
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
     schema:
       openAPIV3Schema:
         description: Deployment enables declarative updates for Pods and ReplicaSets.
